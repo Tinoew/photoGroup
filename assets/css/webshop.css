@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #3E1635;
+}
+
+
+.container {
+    padding: 20px;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.grid-item {
+    width: calc(33.333% - 20px);
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+
+.filter-section {
+    margin: 20px 0;
+}
+.filter-title {
+    font-weight: bold;
+}
