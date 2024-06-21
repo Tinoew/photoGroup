@@ -55,11 +55,39 @@ nav a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+    font-size: 20px;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #F00
+    color: rgb(91, 0, 81)
+}
+
+.nav {
+    background-color: #280022;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+}
+.nav img {
+    border-radius: 50%;
+}
+.nav .logo {
+    display: flex;
+    align-items: center;
+}
+.nav .logo img {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 110px;
+}
+.navbar h1 {
+    font-family: 'Cursive';
+    margin: 0;
 }
 
 header {
@@ -82,14 +110,13 @@ header {
 
 .profile-container {
     position: fixed;
-
     right: 20px;
 }
 
 .profile-image {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
@@ -114,55 +141,6 @@ header {
     right: 5px;
     cursor: pointer;
     font-size: 16px;
-}
-
-/*review form */
-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="text"] {
-    padding: 15px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    width: 85%;
-}
-
-input[type="submit"] {
-    background-color: #721c24;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-}
-
-input#review.beschrijving {
-    width: 100%;
-}
-
-.message {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #dff0d8;
-    border: 1px solid #c3e6cb;
-    color: #155724;
-    text-align: center;
 }
 
 .logout {
