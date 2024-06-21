@@ -1,5 +1,8 @@
-<nav>
-    <a href="index.php">Home</a>
+<nav class="nav">
+        <div class="logo">
+            <img src="./assets/images/standard.gif" alt="Logo">
+        </div>
+        <a href="index.php">Home</a>
     <?php
 
     if (isset($_SESSION["uid"])) {
