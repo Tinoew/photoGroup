@@ -9,8 +9,6 @@
         <main class="main-log-in">
 
             <div class="primary-bg">
-                <div class="girl-reading-wrapper">
-                    <img class="girl-reading-img" src="images/girl-enjoying-reading.png" alt="Girl enjoying-reading">
                 </div>
                 <p class="action">Log in</p>
                 <p class="what-you-have-to-do">log in je account</p>
