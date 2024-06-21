@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- admin account
 
-REPLACE INTO users (uid, username, password, admin)
+insert INTO users (uid, username, password, admin)
 VALUES (1, 'admin', '$2y$10$qonovuxVdgXBVnjnqXV7j.WeN1g9iEJs8wOoxPh7AOkdkE4WnO5fW', true);
