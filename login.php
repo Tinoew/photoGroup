@@ -30,7 +30,7 @@ $conn = dbConnect();
             <input type="password" name="password" placeholder="password" required><br>
             <button type="submit" name="submit">log in</button>
         </form>
-        <a href="sign_up.php">maak een account</a>
+        <a href="register.php">maak een account</a>
         </div>
     </main>
     <?php include 'includes/footer.php' ?>
