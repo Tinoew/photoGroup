@@ -5,7 +5,7 @@
     <?php include 'includes/head.php' ?>
 
     <body>
-        <?php include 'includes/nav1.php'; ?>
+        <?php include 'includes/nav.php'; ?>
         <main class="main-log-in">
 
             <div class="primary-bg">
