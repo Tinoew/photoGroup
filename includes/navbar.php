@@ -1,6 +1,6 @@
 <nav class="nav">
         <div class="logo">
-            <img src="./assets/images/standard.gif" alt="Logo">
+            <img src="./assets/images/logods.gif" alt="Logo">
         </div>
         <a href="index.php">Home</a>
     <?php
