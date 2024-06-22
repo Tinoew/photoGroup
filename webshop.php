@@ -16,7 +16,6 @@ $conn = dbConnect();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webshop</title>
     <link rel="stylesheet" href="../assets/css/webshop.css">
-    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
