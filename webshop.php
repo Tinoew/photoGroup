@@ -1,3 +1,14 @@
+<?php
+include_once 'includes/navbar.php';
+include_once 'includes/head.php';
+?>
+<?php
+
+include_once 'functions/functions.php';
+$conn = dbConnect();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webshop</title>
     <link rel="stylesheet" href="../assets/css/webshop.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
@@ -40,7 +52,7 @@
             </div>
         </div>
 
-        
+
         <div class="grid">
             <div class="grid-item"></div>
             <div class="grid-item"></div>
