@@ -31,10 +31,10 @@ $conn = dbConnect();
                 <label class="filter-title" for="category">Category:</label>
                 <select id="category" name="category">
                     <option value="">Select Category</option>
-                    <option value="electronics">Electronics</option>
+                    <option value="electronics">nature</option>
                     <option value="clothing">Clothing</option>
-                    <option value="home_appliances">Home Appliances</option>
-                    <option value="books">Books</option>
+                    <option value="home_appliances">space</option>
+                    <option value="books">abstract</option>
                 </select>
             </div>
 
