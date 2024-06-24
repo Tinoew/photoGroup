@@ -56,3 +56,60 @@ try {
 }
 
 ?>
+
+<?php
+session_start();
+
+$host = 'localhost';
+$dbname = 'tai';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
+
+try {
+    // verbind database
+    $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+        if (empty($username) || empty($password)) {
+            die("Alle velden moeten worden ingevuld.");
+        }
+
+        $sql = "SELECT * FROM user WHERE username = :username";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $user = $stmt->fetch();
+        $_SESSION['user_id'] = $user['id'];
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['user_id'] = $user['id'];
+                var_dump($_SESSION) ;
+                header("Location: main.php");
+                exit;
+            } else {
+                echo "Wachtwoord onjuist.";
+            }
+        } else {
+            echo "Gebruiker niet gevonden.";
+        }
+    }
+
+} catch (PDOException $e) {
+    die("Connection failed: ". $e->getMessage());
+} finally {
+    //sluit verbinding
+    $pdo = null;
+}
+
+?>
