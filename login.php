@@ -35,11 +35,6 @@ $conn = dbConnect();
 
         <?php include_once 'includes/footer.php'; ?>
 
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            login($conn);
-        }
-        ?>
 
     </div>
     <?php include 'includes/footer.php' ?>
