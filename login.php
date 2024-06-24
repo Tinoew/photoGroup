@@ -1,8 +1,12 @@
 <?php 
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
-?>
 
+
+include_once 'functions/functions.php';
+$conn = dbConnect();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +29,7 @@ include_once 'includes/head.php';
             <input type="password" name="password" placeholder="password" required><br>
             <button type="submit" name="submit">log in</button>
         </form>
-        <a href="register.php">maak een account</a>
+        <a href="sign_up.php">maak een account</a>
         </div>
     </main>
     <?php include 'includes/footer.php' ?>
