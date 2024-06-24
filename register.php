@@ -17,23 +17,18 @@ $conn = dbConnect();
 </head>
 
 <body>
-    <div class="register">
-        <h1>registreer</h1>
-
-        <ul class="registerForm">
-            <form action="" method="post">
-                <li><input type="text" id="name" name="name" placeholder="gebruikersnaam" required></li>
-                <li><input type="email" id="email" name="email" placeholder="email" required></li>
-                <li><input type="password" id="password" name="password" placeholder="wachtwoord" required></li>
-                <li><input type="password" id="repeatPassword" name="repeatPassword" placeholder="herhaal wachtwoord" required></li>
-                <li class="registerButton"><input class="LoginButton" type="submit" value="Registreer" name="register" id="registerButton"></li>
-                <li>
-                    <div>Heeft u al een account?</div><a href="login.php">Login</a>
-                </li>
-            </form>
-        </ul>
+    <!-- Registratie Formulier -->
+    <div id="register" class="form-container">
+        <h1 class="register">Registreren</h1>
+        <form class="registerForm">
+            <input type="text" name="name" placeholder="Naam" required>
+            <input type="password" name="password" placeholder="Wachtwoord" required>
+            <input type="password" name="confirm_password" placeholder="Bevestig Wachtwoord" required>
+            <div class="button-container">
+                <button type="submit" class="LoginButton2">Registreren</button>
+            </div>
+        </form>
     </div>
-    <?php include 'includes/footer.php' ?>
 </body>
 
 </html>
