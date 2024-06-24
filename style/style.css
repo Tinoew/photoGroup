@@ -47,6 +47,7 @@ nav {
     width: 100%;
     position: fixed;
     top: 0;
+
     background-color: #280022; /* Add your desired background color */
     z-index: 1000; /* Adjust the z-index as needed */
 }
