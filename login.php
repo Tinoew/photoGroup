@@ -23,7 +23,7 @@ $conn = dbConnect();
 
         <ul class="registerForm">
             <form action="" method="post">
-                <li><input type="text" id="email" name="email" placeholder="email"></li>
+                <li><input type="text" id="username" name="username" placeholder="username"></li>
                 <li><input type="password" id="password" name="password" placeholder="wachtwoord"></li>
                 <div class="button-container">
                 <li><input class="LoginButton" type="submit" value="Login"></li>
