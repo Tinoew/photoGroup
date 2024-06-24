@@ -79,10 +79,9 @@ try {
 ?>
 
 <?php
-session_start();
 
 $host = 'localhost';
-$dbname = 'tai';
+$dbname = 'photogroup';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
