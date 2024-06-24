@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 CREATE DATABASE photogroup
+=======
+CREATE DATABASE 
+>>>>>>> Stashed changes
 
 CREATE TABLE IF NOT EXISTS users (
     id INT NOT NULL AUTO_INCREMENT,
