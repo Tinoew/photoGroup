@@ -1,6 +1,7 @@
 <?php 
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
+
 include_once 'functions/functions.php';
 $conn = dbConnect();
 
@@ -16,20 +17,31 @@ $conn = dbConnect();
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <main class="main-log-in">
+<div class="register">
+        <h1>Login</h1>
 
-        <div class="primary-bg">
-        </div>
-        <p class="action">Log in</p>
-        <p class="what-you-have-to-do">log in je account</p>
-        <form method="post" class="input-fields">
-            <input type="text" name="username" placeholder="username" required><br>
-            <input type="password" name="password" placeholder="password" required><br>
-            <button type="submit" name="submit">log in</button>
-        </form>
-        <a href="sign_up.php">maak een account</a>
-        </div>
-    </main>
+        <ul class="registerForm">
+            <form action="" method="post">
+                <li><input type="text" id="email" name="email" placeholder="email"></li>
+                <li><input type="password" id="password" name="password" placeholder="wachtwoord"></li>
+                <div class="button-container">
+                <li><input class="LoginButton" type="submit" value="Login"></li>
+                </div>
+                <li>
+                    <div>Heeft u geen account?</div><a href="register.php">Registreer</a>
+                </li>
+            </form>
+        </ul>
+
+        <?php include_once 'includes/footer.php'; ?>
+
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            login($conn);
+        }
+        ?>
+
+    </div>
     <?php include 'includes/footer.php' ?>
 </body>
 
