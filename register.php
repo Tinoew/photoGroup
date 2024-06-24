@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
 
@@ -8,30 +8,31 @@ $conn = dbConnect();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
-    <main class="main-log-in">
-        <div class="primary-bg">
-            </div>
-            <p class="action">Account aanmaken</p>
-            <p class="what-you-have-to-do">maak je account aan</p>
-            <form method="post" class="input-fields">
+    <div class="register">
+        <h1>registreer</h1>
 
-                <input type="text" name="username" placeholder="username"><br>
-
-                <input type="password" name="password" placeholder="password"><br>
-                
-                <button type="submit" name= "submit" >account creëren</button>
-                
+        <ul class="registerForm">
+            <form action="" method="post">
+                <li><input type="text" id="name" name="name" placeholder="gebruikersnaam" required></li>
+                <li><input type="email" id="email" name="email" placeholder="email" required></li>
+                <li><input type="password" id="password" name="password" placeholder="wachtwoord" required></li>
+                <li><input type="password" id="repeatPassword" name="repeatPassword" placeholder="herhaal wachtwoord" required></li>
+                <li class="registerButton"><input class="LoginButton" type="submit" value="Registreer" name="register" id="registerButton"></li>
+                <li>
+                    <div>Heeft u al een account?</div><a href="login.php">Login</a>
+                </li>
             </form>
-            <a href="login.php">log in</a>
-        </div>
-    </main>
+        </ul>
+    </div>
     <?php include 'includes/footer.php' ?>
 </body>
 
