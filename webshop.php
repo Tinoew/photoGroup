@@ -2,6 +2,7 @@
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
 include_once 'functions/functions.php';
+
 $conn = dbConnect();
 ?>
 
@@ -74,3 +75,6 @@ $conn = dbConnect();
 <script src="../assets/js/webshop.js"></script>
 </body>
 </html>
+<?php
+include_once 'includes/footer.php';
+?>

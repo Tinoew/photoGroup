@@ -150,3 +150,16 @@ nav a:hover {
 .filter-title {
     font-weight: bold;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    background-color: #280022;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    color: #fff;
+    flex-wrap: wrap;
+}
