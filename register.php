@@ -22,10 +22,11 @@ $conn = dbConnect();
         <h1 class="register">Registreren</h1>
         <form class="registerForm">
             <input type="text" name="name" placeholder="Naam" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Wachtwoord" required>
             <input type="password" name="confirm_password" placeholder="Bevestig Wachtwoord" required>
             <div class="button-container">
-                <button type="submit" class="LoginButton2">Registreren</button>
+            <button type="submit" class="button-78" role="button">Register</button>
             </div>
         </form>
     </div>

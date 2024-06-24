@@ -18,26 +18,22 @@ $conn = dbConnect();
 </head>
 
 <body>
-<div class="register">
-        <h1>Login</h1>
-
-        <ul class="registerForm">
-            <form action="" method="post">
-                <li><input type="text" id="email" name="email" placeholder="email"></li>
-                <li><input type="password" id="password" name="password" placeholder="wachtwoord"></li>
-                <div class="button-container">
-                <li><input class="LoginButton" type="submit" value="Login"></li>
-                </div>
-                <li>
-                    <div>Heeft u geen account?</div><a href="register.php">Registreer</a>
-                </li>
-            </form>
-        </ul>
-
-        <?php include_once 'includes/footer.php'; ?>
-
-
+    <!-- Login Formulier -->
+    <div id="login" class="form-container">
+        <h1 class="register">Login</h1>
+        <form class="registerForm">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Wachtwoord" required>
+            <div class="button-container">
+                <button type="submit" class="button-78" role="button">Login</button>
+            </div>
+        </form>
     </div>
+
+    <?php include_once 'includes/footer.php'; ?>
+
+
 </body>
 
 </html>
+
