@@ -2,8 +2,6 @@
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
 
-session_start();
-
 $host = 'localhost';
 $dbname = 'photogroup';
 $user = 'root';
