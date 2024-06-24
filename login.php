@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
 
@@ -16,6 +16,7 @@ $conn = dbConnect();
     <title>Register</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
 <div class="register">
         <h1>Login</h1>
@@ -37,7 +38,6 @@ $conn = dbConnect();
 
 
     </div>
-    <?php include 'includes/footer.php' ?>
 </body>
 
 </html>
