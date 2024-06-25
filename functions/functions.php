@@ -18,38 +18,39 @@ function dbConnect() {
 }
 
 function register($conn) {
-    if (isset($_POST['name'], $_POST['password'], $_POST['confirm_password'])) {
-        $name = $_POST['name'];
-        $password = $_POST['password'];
-        $confirm_password = $_POST['confirm_password'];
-
-        if ($password !== $confirm_password) {
-            echo 'Wachtwoorden komen niet overeen!';
-            return;
-        }
-
-        // Controleren of de naam al bestaat
-        $checkSql = 'SELECT * FROM users WHERE name = :name';
-        $checkStmt = $conn->prepare($checkSql);
-        $checkStmt->execute(['name' => $name]);
-        if ($checkStmt->rowCount() > 0) {
-            echo 'Gebruikersnaam is al in gebruik!';
-            return;
-        }
-
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-        try {
-            $sql = 'INSERT INTO users (name, password) VALUES (:name, :password)';
-            $stmt = $conn->prepare($sql);
-            $stmt->execute(['name' => $name, 'password' => $hashed_password]);
-
-            echo 'Registratie succesvol!';
-        } catch (PDOException $e) {
-            echo 'Registratie mislukt: ' . $e->getMessage();
-        }
-    } else {
+    if (!isset($_POST['name'], $_POST['password'], $_POST['confirm_password'])) {
         echo 'Vul alle velden in.';
+        return;
+    }
+
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    if ($password !== $confirm_password) {
+        echo 'Wachtwoorden komen niet overeen!';
+        return;
+    }
+
+    // Controleren of de naam al bestaat
+    $checkSql = 'SELECT * FROM users WHERE name = :name';
+    $checkStmt = $conn->prepare($checkSql);
+    $checkStmt->execute(['name' => $name]);
+    if ($checkStmt->rowCount() > 0) {
+        echo 'Gebruikersnaam is al in gebruik!';
+        return;
+    }
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    try {
+        $sql = 'INSERT INTO users (name, password) VALUES (:name, :password)';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['name' => $name, 'password' => $hashed_password]);
+
+        echo 'Registratie succesvol!';
+    } catch (PDOException $e) {
+        echo 'Registratie mislukt: ' . $e->getMessage();
     }
 }
 
