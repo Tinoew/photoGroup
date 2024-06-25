@@ -25,6 +25,7 @@ $conn = dbConnect();
             </div>
         </form>
     </div>
+    <a href="index.php">log in</a>
 
     <?php include_once 'includes/footer.php'; ?>
 
