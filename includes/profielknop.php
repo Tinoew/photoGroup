@@ -15,8 +15,7 @@ session_start();
         
         echo "<a class='logout' href='logout.php'>Loguit</a>";
     } else {
-        // Als de gebruiker niet is ingelogd, toon dan bijvoorbeeld een algemene melding
-        echo "<h3>Gebruiker niet ingelogd</h3>";
+        echo "<h3>Gebruiker niet ingelogd, klik <a href='register.php'>hier</a> om een account te maken, of <a href='login.php'>hier</a> om in te loggen. </h3>";
     }
     ?>
   </div>
