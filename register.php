@@ -22,7 +22,6 @@ $conn = dbConnect();
         <h1 class="register">Registreren</h1>
         <form class="registerForm">
             <input type="text" name="name" placeholder="Naam" required>
-            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Wachtwoord" required>
             <input type="password" name="confirm_password" placeholder="Bevestig Wachtwoord" required>
             <div class="button-container">
@@ -30,6 +29,15 @@ $conn = dbConnect();
             </div>
         </form>
     </div>
+
+    <?php include_once 'includes/footer.php'; ?>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        register($conn);
+    }
+    ?>
+
 </body>
 
 </html>

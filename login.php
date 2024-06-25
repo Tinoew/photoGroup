@@ -22,16 +22,23 @@ $conn = dbConnect();
     <div id="login" class="form-container">
         <h1 class="register">Login</h1>
         <form class="registerForm">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Wachtwoord" required>
+        <input type="text" name="name" placeholder="Naam" required>
+        <input type="password" name="password" placeholder="Wachtwoord" required>
             <div class="button-container">
                 <button type="submit" class="button-78" role="button">Login</button>
             </div>
         </form>
     </div>
 
+
+
     <?php include_once 'includes/footer.php'; ?>
 
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        login($conn);
+    }
+    ?>
 
 </body>
 
