@@ -130,6 +130,7 @@ header {
 }
 
 .profile-popup {
+    margin-right: 1%;
     display: none;
     position: absolute;
     top: 60px;
