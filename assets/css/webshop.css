@@ -1,12 +1,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-background-color: #3E1635;
+    background-color: #3E1635;
 }
 
+/* Navbar */
 nav {
     display: flex;
-    justify-content: center;
     justify-content: space-evenly;
     background-color: #280022;
     color: #fff;
@@ -15,9 +15,7 @@ nav {
 }
 
 nav a {
-    margin: 0 5px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0 10px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -26,7 +24,7 @@ nav a {
 }
 
 nav a:hover {
-    color: rgb(91, 0, 81)
+    color: rgb(91, 0, 81);
 }
 
 .nav {
@@ -36,26 +34,26 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    
 }
+
 .nav img {
     border-radius: 50%;
 }
+
 .nav .logo {
     display: flex;
     align-items: center;
 }
+
 .nav .logo img {
     width: 60px;
     height: 60px;
-    margin-left: 10px;
-    margin-top: 110px;
 }
+
 .navbar h1 {
     font-family: 'Cursive';
     margin: 0;
 }
-
 
 .logo {
     display: flex;
@@ -113,11 +111,12 @@ nav a:hover {
     margin: 0 auto 10px auto;
 }
 
-
+/* Body */
 .container {
     padding: 20px;
 }
 
+/* Filter */
 .filter {
     margin-bottom: 20px;
 }
@@ -136,23 +135,43 @@ nav a:hover {
     gap: 20px;
 }
 
+
 .grid-item {
     width: calc(33.333% - 20px);
-    height: 150px;
-    background-color: #ccc;
+    height: 250px;
+    background-color: #f9ecec;
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
 
 .filter-section {
     margin: 20px 0;
 }
+
 .filter-title {
     font-weight: bold;
+    margin-left: 5px;
 }
 
-.main {
-    background-color: white;
+.filter {
+    background-color: rgb(150, 137, 137);
+    max-width: 25cm;
+    border-radius: 10px;
+}
+
+#search {
+    margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 footer {
@@ -162,7 +181,6 @@ footer {
     background-color: #280022;
     width: 100%;
     display: flex;
-    justify-content: center;
     justify-content: space-evenly;
     color: #fff;
     flex-wrap: wrap;

@@ -18,7 +18,8 @@ $conn = dbConnect();
 
 <div class="container">
     <button id="filter-toggle">Show Filters</button>
-    
+
+    <div class="filter">
     <div class="filter-section" id="filter-section" style="display:none;">
         <h1>Filter Options</h1>
         
@@ -46,26 +47,27 @@ $conn = dbConnect();
             </div>
         </div>
     </div>
+    </div>
 
     <div class="grid" id="picture-grid">
         <div class="grid-item" data-category="nature" data-price="10">
-            <img src="path/to/nature1.jpg" alt="Nature Picture 1">
+            <img src="../assets/images/nature.jpg" alt="Nature Picture 1">
             <h3>Nature Picture 1</h3>
             <p>$10</p>
         </div>
         <div class="grid-item" data-category="city" data-price="20">
-            <img src="path/to/city1.jpg" alt="City Picture 1">
+            <img src="../assets/images/city.jpg" alt="City Picture 1">
             <h3>City Picture 1</h3>
             <p>$20</p>
         </div>
         <div class="grid-item" data-category="animals" data-price="15">
             <img src="path/to/animals1.jpg" alt="Animals Picture 1">
-            <h3>Animals Picture 1</h3>
+            <h3>Nature Picture 2</h3>
             <p>$15</p>
         </div>
-        <div class="grid-item" data-category="animals" data-price="45">
-            <img src="path/to/animals1.jpg" alt="Animals Picture 1">
-            <h3>Animals Picture </h3>
+        <div class="grid-item" data-category="nature" data-price="45">
+            <img src="../assets/images/nature2.jpg" alt="Nature picture1">
+            <h3>Animals Picture <div> $45 </div> </h3>
             <p>$45</p>
         </div>
         <!-- Add more grid items as needed -->
