@@ -77,15 +77,16 @@ nav a:hover {
 }
 
 .profile-popup {
+    margin-right: 1%;
     display: none;
     position: absolute;
     top: 60px;
     right: 0;
-    width: 250px;
+    width: 450px;
     padding: 15px;
     color: black;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #9700b5;
+    border: 5px solid #280032;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;

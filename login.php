@@ -18,8 +18,8 @@ $conn = dbConnect();
     <div id="login" class="form-container">
         <h1 class="register">Login</h1>
         <form class="registerForm" method="POST" action="login.php">
-            <input type="text" name="name" placeholder="Naam" required>
-            <input type="password" name="password" placeholder="Wachtwoord" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="password" name="password" placeholder="Password" required>
             <div class="button-container">
                 <button type="submit" class="button-78" role="button">Login</button>
             </div>
@@ -31,8 +31,6 @@ $conn = dbConnect();
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         login($conn);
-    } else {
-        echo 'Formulier niet ingediend!';
     }
     ?>
 </body>

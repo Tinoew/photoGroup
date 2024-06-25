@@ -11,7 +11,7 @@
         echo '<a href="webshop.php">gallery</a>';
         echo '<a href="profile.php">upload</a>';
         echo '<a href="login.php">Login</a>';
-        echo '<a href="register.php">Registreer</a>';
+        echo '<a href="register.php">Register</a>';
     }
 
     include "includes/profielKnop.php";
