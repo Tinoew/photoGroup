@@ -11,11 +11,12 @@ session_start();
     if (isset($_SESSION['uid'])) {
         // Haal de gebruikersnaam uit de sessie
         $username = $_SESSION['name'];
-        echo "<h3>Welcome $username!</h3>";
+        echo "<h3>Welkom $username!</h3>";
         
-        echo "<a class='logout' href='logout.php'>logout</a>";
+        echo "<a class='logout' href='logout.php'>Loguit</a>";
     } else {
-        echo "<h3>User not logged in, click <a href='register.php'>here</a> to make a account, or <a href='login.php'>here</a> to login. </h3>";
+        // Als de gebruiker niet is ingelogd, toon dan bijvoorbeeld een algemene melding
+        echo "<h3>Gebruiker niet ingelogd</h3>";
     }
     ?>
   </div>

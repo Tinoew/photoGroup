@@ -19,7 +19,7 @@ function dbConnect() {
 
 function register($conn) {
     if (!isset($_POST['name'], $_POST['password'], $_POST['confirm_password'])) {
-        echo 'Vul alle velden in.';
+        echo "<script type=\"text/javascript\">toastr.error('Please fill in all fields.')</script>";
         return;
     }
 
@@ -28,7 +28,7 @@ function register($conn) {
     $confirm_password = $_POST['confirm_password'];
 
     if ($password !== $confirm_password) {
-        echo 'Wachtwoorden komen niet overeen!';
+        echo "<script type=\"text/javascript\">toastr.error('Passwords do not match')</script>";
         return;
     }
 
@@ -37,7 +37,7 @@ function register($conn) {
     $checkStmt = $conn->prepare($checkSql);
     $checkStmt->execute(['name' => $name]);
     if ($checkStmt->rowCount() > 0) {
-        echo 'Gebruikersnaam is al in gebruik!';
+        echo "<script type=\"text/javascript\">toastr.error('Gebruiker bestaat al')</script>";
         return;
     }
 
@@ -48,9 +48,9 @@ function register($conn) {
         $stmt = $conn->prepare($sql);
         $stmt->execute(['name' => $name, 'password' => $hashed_password]);
 
-        echo 'Registratie succesvol!';
+        echo "<script type=\"text/javascript\">toastr.success('registered succesful')</script>";
     } catch (PDOException $e) {
-        echo 'Registratie mislukt: ' . $e->getMessage();
+        echo "<script type=\"text/javascript\">toastr.error('register failed: ')</script>" . $e->getMessage();
     }
 }
 
@@ -65,10 +65,10 @@ function login($conn) {
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password'])) {
-            echo 'Inloggen succesvol!';
+            echo "<script type=\"text/javascript\">toastr.success('login succesful')</script>";
             // Hier kun je een sessie starten of doorverwijzen naar een andere pagina
         } else {
-            echo 'Ongeldige gebruikersnaam of wachtwoord!';
+            echo "<script type=\"text/javascript\">toastr.error('Incorrect username or password!')</script>";
         }
     }
 }
