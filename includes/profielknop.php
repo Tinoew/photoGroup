@@ -8,7 +8,7 @@ session_start();
     <span class="close-btn" onclick="togglePopup()">&times;</span>
     <?php
     // Controleer of de gebruiker is ingelogd
-    if (isset($_SESSION['uid'])) {
+    if (isset($_SESSION['id'])) {
         // Haal de gebruikersnaam uit de sessie
         $username = $_SESSION['name'];
         echo "<h3>Welkom $username!</h3>";
