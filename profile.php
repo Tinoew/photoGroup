@@ -10,18 +10,27 @@ $conn = dbConnect();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery App</title>
     <link rel="stylesheet" href="./assets/css/profile.css">
 </head>
+
 <body>
 
     <div class="container">
         <div class="controls">
             <input type="text" id="title" placeholder="add Title">
             <textarea id="description" placeholder="add description"></textarea>
+            <select id="category">
+                <option value="nature">Nature</option>
+                <option value="city">City</option>
+                <option value="animals">Animals</option>
+            </select>
+            <input type="number" id="price" placeholder="Add Price">
+            <input type="file" id="productImage" name="productImage" accept="image/*"><br><br>
             <button id="upload">upload</button>
             <button id="remove">remove</button>
         </div>
@@ -31,4 +40,5 @@ $conn = dbConnect();
     </div>
     <script src="../assets/js/profile.js"></script>
 </body>
+
 </html>

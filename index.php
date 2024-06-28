@@ -14,6 +14,7 @@ include_once 'includes/head.php';
 </head>
 
 <body>
+    <h1>homepage</h1>
     <?php include_once 'includes/footer.php'; ?>
 </body>
 
