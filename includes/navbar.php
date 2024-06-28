@@ -4,7 +4,7 @@
         </div>
     <a href="index.php">Home</a>
     <a href="webshop.php">Gallary</a>
-    <a href="profile.php">Upload</a>
+    <a href="create.php">Upload</a>
     <?php
 
     if (isset($_SESSION["uid"])) {

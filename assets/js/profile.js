@@ -1,3 +1,5 @@
+
+
 document.getElementById('upload').addEventListener('click', function() {
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
@@ -29,6 +31,16 @@ document.getElementById('remove').addEventListener('click', function() {
     const gallery = document.getElementById('gallery');
     if (gallery.lastChild.classList.contains('gallery-item')) {
         gallery.removeChild(gallery.lastChild);
+    } else {
+        alert('No items to remove.');
+    }
+});
+
+document.getElementById('remove').addEventListener('click', function() {
+    const gallery = document.getElementById('gallery');
+    if (gallery.lastChild.classList.contains('gallery-item')) {
+        gallery.removeChild(gallery.lastChild);
+        // Optionally, add code here to remove the item from the database
     } else {
         alert('No items to remove.');
     }
