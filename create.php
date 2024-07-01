@@ -15,7 +15,7 @@ $conn = dbConnect();
     <?php include_once 'includes/navbar.php'; ?>
 
     <div class="message">
-        <p>Hier kunt u een review achterlaten over een tentje die een lekkere of niet lekkere appeltaart heeft.</p>
+        <p>Here you can upload a photo for your photobook.</p>
     </div>
 
     <form action="" method="POST" enctype="multipart/form-data">
@@ -25,8 +25,6 @@ $conn = dbConnect();
         <input type="text" name="nameRestaurant" id="nameRestaurant" required>
         <label for="place">Place:</label>
         <input type="text" name="place" id="place" required>
-        <label for="title"><Title></Title></label>
-        <input type="text" name="title" id="title" required>
         <label class="reviewLabel" for="rating">Score 1 to 5:</label>
         <select class="reviewClass" id="rating" name="rating">
             <option value="1" id="1">1</option>
@@ -35,9 +33,9 @@ $conn = dbConnect();
             <option value="4" id="4">4</option>
             <option value="5" id="5" selected>5</option>
         </select>
-        <label for="image">Upload hier een afbeelding van de appeltaart als u deze heeft:</label>
+        <label for="image">upload youre picture here:</label>
         <input type="file" name="image" id="image" class="afbeeldingUpload">
-        <label for="review"class="reviewLabel">Laat hier uw review achter:</label>
+        <label for="review"class="reviewLabel">Leave a description here of the photo:</label>
         <textarea rows="8" cols="35" id="review" class="reviewClass" name="review"></textarea>
         <input type="submit" name="submit" value="Opslaan">
     </form>

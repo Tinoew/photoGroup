@@ -73,7 +73,7 @@ function login($conn)
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['loggedin'] = true; // Add a session variable to indicate successful login
 
-                header("Location: ./login.php");
+                header("Location: ./index.php");
                 exit();
             } else {
                 echo "<script type=\"text/javascript\">toastr.error('Wachtwoord en Email adres komen niet overeen')</script>";
