@@ -7,16 +7,16 @@ session_start();
   <div class="profile-popup" id="profilePopup">
     <span class="close-btn" onclick="togglePopup()">&times;</span>
     <?php
-    // Controleer of de gebruiker is ingelogd
+    // Check if the user is logged in
     if (isset($_SESSION['id'])) {
-        // Haal de gebruikersnaam uit de sessie
+        // Get the username from the session
         $username = $_SESSION['name'];
-        echo "<h3>Welkom $username!</h3>";
+        echo "<h3>Welcome, $username!</h3>";
         
-        echo "<a class='logout' href='logout.php'>Loguit</a>";
+        echo "<a class='logout' href='logout.php'>Logout</a>";
     } else {
-        // Als de gebruiker niet is ingelogd, toon dan bijvoorbeeld een algemene melding
-        echo "<h3>Gebruiker niet ingelogd</h3>";
+        // If the user is not logged in, show a message
+        echo "<h3>User not logged in</h3>";
     }
     ?>
   </div>
