@@ -4,6 +4,13 @@ include_once 'includes/head.php';
 include_once 'functions/functions.php';
 
 $conn = dbConnect();
+
+$query = "SELECT title, category, price, img_path FROM images";
+$stmt = $conn->query($query);
+
+$images = $stmt->fetchAll();
+
+$conn = null;
 ?>
 
 <!DOCTYPE html>
@@ -50,123 +57,24 @@ $conn = dbConnect();
     </div>
 
     <div class="grid" id="picture-grid">
-        <div class="grid-item" data-category="city" data-price="10">
-            <img src="/img/almere_campus.jpg" alt="Nature Picture 1">
-            <h3>Nature Picture 1</h3>
-            <p>$10</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="20">
-            <img src="/img/city.jpg" alt="City Picture 1">
-            <h3>City Picture 1</h3>
-            <p>$20</p>
-        </div>
-
-        <div class="grid-item" data-category="animals" data-price="15">
-            <img src="/img/hond_sneeuw.jpg" alt="Animals Picture 1">
-            <h3>Animals Picture 1</h3>
-            <p>$15</p>
-        </div>
-
-        <div class="grid-item" data-category="nature" data-price="45">
-            <img src="/img/nature2.jpg" alt="Nature Picture 2">
-            <h3>Nature Picture 2</h3>
-            <p>$45</p>
-        </div>
-
-        <div class="grid-item" data-category="nature" data-price="24">
-            <img src="./assets/images/nature2.jpg" alt="Nature Picture 2">
-            <h3>Nature Picture 3</h3>
-            <p>$24</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="30">
-            <img src="./assets/images/city.jpg" alt="Nature Picture 2">
-            <h3>city picture 2</h3>
-            <p>$30</p>
-        </div>
-
-        
-        <div class="grid-item" data-category="animal" data-price="12">
-            <img src="./assets/images/animal.jpg" alt="animal Picture 2">
-            <h3>animal picture</h3>
-            <p>$12</p>
-        </div>
-
-        <div class="grid-item" data-category="animal" data-price="5">
-            <img src="./assets/images/animal.jpg" alt="animal Picture 2">
-            <h3>animalPicture 2</h3>
-            <p>$5</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="9">
-            <img src="./assets/images/city.jpg" alt="city Picture 2">
-            <h3>city picture 3</h3>
-            <p>$9</p>
-        </div>
-
-        
-        <div class="grid-item" data-category="animal" data-price="10">
-            <img src="./assets/images/animal.jpg" alt="Nature Picture 1">
-            <h3>animal Picture 1</h3>
-            <p>$10</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="20">
-            <img src="./assets/images/city.jpg" alt="City Picture 1">
-            <h3>City Picture 1</h3>
-            <p>$20</p>
-        </div>
-
-        <div class="grid-item" data-category="animals" data-price="15">
-            <img src="./assets/images/animals.jpg" alt="Animals Picture 1">
-            <h3>Animals Picture 1</h3>
-            <p>$15</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="3">
-            <img src="./assets/images/city.jpg" alt="Nature Picture 2">
-            <h3>city picture</h3>
-            <p>$3</p>
-        </div>
-
-        <div class="grid-item" data-category="nature" data-price="24">
-            <img src="./assets/images/nature2.jpg" alt="Nature Picture 2">
-            <h3>Nature Picture 3</h3>
-            <p>$24</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="30">
-            <img src="./assets/images/city.jpg" alt="Nature Picture 2">
-            <h3>city picture 2</h3>
-            <p>$30</p>
-        </div>
-
-        
-        <div class="grid-item" data-category="nature" data-price="45">
-            <img src="/img/nature2.jpg" alt="Nature Picture 2">
-            <h3>Nature Picture 4</h3>
-            <p>$45</p>
-        </div>
-
-        <div class="grid-item" data-category="animal" data-price="35">
-            <img src="./assets/images/animal.jpg" alt="animal Picture 2">
-            <h3>animalPicture 2</h3>
-            <p>$35</p>
-        </div>
-
-        <div class="grid-item" data-category="city" data-price="30">
-            <img src="./assets/images/city.jpg" alt="city Picture 2">
-            <h3>city picture 3</h3>
-            <p>$30</p>
-        </div>
-        <!-- Add more grid items as needed -->
+        <?php if ($images): ?>
+            <?php foreach ($images as $image): ?>
+                <div class="grid-item" data-category="<?php echo htmlspecialchars($image['category']); ?>" data-price="<?php echo htmlspecialchars($image['price']); ?>">
+                    <img src="<?php echo htmlspecialchars($image['img_path']); ?>" alt="<?php echo htmlspecialchars($image['title']); ?>">
+                    <h3><?php echo htmlspecialchars($image['title']); ?></h3>
+                    <p>$<?php echo htmlspecialchars($image['price']); ?></p>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No images found.</p>
+        <?php endif; ?>
     </div>
 </div>
 
 <script src="./assets/js/webshop.js"></script>
 </body>
 </html>
+
 <?php
 include_once 'includes/footer.php';
 ?>
