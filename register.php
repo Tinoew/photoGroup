@@ -16,7 +16,7 @@ $conn = dbConnect();
 <body>
     <!-- Registratie Formulier -->
     <div id="register" class="form-container">
-        <h1 class="register">Registreren</h1>
+        <h1 class="register">Register</h1>
         <form class="registerForm" method="POST" action="register.php">
             <input type="text" name="name" placeholder="Name" required>
             <input type="password" name="password" placeholder="Password" required>
