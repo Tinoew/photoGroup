@@ -7,7 +7,7 @@
     <a href="webshop.php">Gallery</a>
     <a href="create.php">Upload</a>
     <?php
-    include "includes/profielKnop.php";
+    include "includes/profilebutton.php";
 
     if (isset($_SESSION["id"])) {
         
