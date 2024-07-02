@@ -57,7 +57,7 @@ function upload($conn) {
     try {
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
             // Define the target directory
-            $targetDir = "uploads/";
+            $targetDir = "img/";
             // Check if the directory exists, if not, create it
             if (!is_dir($targetDir)) {
                 mkdir($targetDir, 0755, true);
