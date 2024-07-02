@@ -50,26 +50,26 @@ $conn = dbConnect();
     </div>
 
     <div class="grid" id="picture-grid">
-        <div class="grid-item" data-category="nature" data-price="10">
-            <img src="./assets/images/nature.jpg" alt="Nature Picture 1">
+        <div class="grid-item" data-category="city" data-price="10">
+            <img src="/img/almere_campus.jpg" alt="Nature Picture 1">
             <h3>Nature Picture 1</h3>
             <p>$10</p>
         </div>
 
         <div class="grid-item" data-category="city" data-price="20">
-            <img src="./assets/images/city.jpg" alt="City Picture 1">
+            <img src="/img/city.jpg" alt="City Picture 1">
             <h3>City Picture 1</h3>
             <p>$20</p>
         </div>
 
         <div class="grid-item" data-category="animals" data-price="15">
-            <img src="./assets/images/animals.jpg" alt="Animals Picture 1">
+            <img src="/img/hond_sneeuw.jpg" alt="Animals Picture 1">
             <h3>Animals Picture 1</h3>
             <p>$15</p>
         </div>
 
         <div class="grid-item" data-category="nature" data-price="45">
-            <img src="./assets/images/nature2.jpg" alt="Nature Picture 2">
+            <img src="/img/nature2.jpg" alt="Nature Picture 2">
             <h3>Nature Picture 2</h3>
             <p>$45</p>
         </div>
@@ -87,7 +87,7 @@ $conn = dbConnect();
         </div>
 
         
-        <div class="grid-item" data-category="nature" data-price="12">
+        <div class="grid-item" data-category="animal" data-price="12">
             <img src="./assets/images/animal.jpg" alt="animal Picture 2">
             <h3>animal picture</h3>
             <p>$12</p>
@@ -124,7 +124,7 @@ $conn = dbConnect();
             <p>$15</p>
         </div>
 
-        <div class="grid-item" data-category="nature" data-price="3">
+        <div class="grid-item" data-category="city" data-price="3">
             <img src="./assets/images/city.jpg" alt="Nature Picture 2">
             <h3>city picture</h3>
             <p>$3</p>
@@ -144,7 +144,7 @@ $conn = dbConnect();
 
         
         <div class="grid-item" data-category="nature" data-price="45">
-            <img src="./assets/images/nature2.jpg" alt="Nature Picture 2">
+            <img src="/img/nature2.jpg" alt="Nature Picture 2">
             <h3>Nature Picture 4</h3>
             <p>$45</p>
         </div>

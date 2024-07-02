@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchesPrice = price >= minPrice && price <= maxPrice;
 
             if (matchesSearch && matchesCategory && matchesPrice) {
-                picture.style.display = "block";
+                picture.style.display = "flex"; // Changed to flex to maintain layout
             } else {
                 picture.style.display = "none";
             }
