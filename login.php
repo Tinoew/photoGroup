@@ -1,8 +1,14 @@
 <?php
+include_once 'includes/head.php';
 include_once 'includes/navbar.php';
 include_once 'includes/head.php';
 include_once 'functions/functions.php';
+
 $conn = dbConnect();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    login($conn);
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +33,5 @@ $conn = dbConnect();
     </div>
 
     <?php include_once 'includes/footer.php'; ?>
-
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        login($conn);
-    }
-    ?>
 </body>
 </html>
