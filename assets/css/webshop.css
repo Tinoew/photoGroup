@@ -137,8 +137,8 @@ nav a:hover {
 
 
 .grid-item {
-    width: calc(33.333% - 20px);
-    height: 250px;
+    width: 400px;
+    height: 350px;
     background-color: #f9ecec;
     border-radius: 10px;
     overflow: hidden;

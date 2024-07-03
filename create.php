@@ -32,6 +32,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <option value="city">City</option>
             <option value="animals">Animals</option>
             <option value="people">People</option>
+            <option value="landscapes">Landscapes</option>
+            <option value="portraits">Portraits</option>
+            <option value="architecture">Architecture</option>
+            <option value="travel">Travel</option>
+            <option value="events">Events</option>
+            <option value="food">Food</option>
+            <option value="sports">Sports</option>
+            <option value="black_and_white">Black and White</option>
+            <option value="abstract">Abstract</option>
+            <option value="street_photography">Street Photography</option>
+            <option value="night_photography">Night Photography</option>
+            <option value="cars">Cars</option>
         </select>
 
         <label for="price">Price:</label>
