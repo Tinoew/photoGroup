@@ -37,7 +37,7 @@ function register($conn) {
     $checkStmt = $conn->prepare($checkSql);
     $checkStmt->execute(['name' => $name]);
     if ($checkStmt->rowCount() > 0) {
-        echo "<script type=\"text/javascript\">toastr.error('Gebruiker bestaat al')</script>";
+        echo "<script type=\"text/javascript\">toastr.error('User already exist')</script>";
         return;
     }
 
@@ -76,10 +76,10 @@ function login($conn)
                 header("Location: ./index.php");
                 exit();
             } else {
-                echo "<script type=\"text/javascript\">toastr.error('Wachtwoord en Email adres komen niet overeen')</script>";
+                echo "<script type=\"text/javascript\">toastr.error('Password and Email address do not match')</script>";
             }
         } else {
-            echo "<script type=\"text/javascript\">toastr.error('Gebruiker niet gevonden')</script>";
+            echo "<script type=\"text/javascript\">toastr.error('User not found')</script>";
         }
     }
 }
