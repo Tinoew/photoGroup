@@ -25,13 +25,14 @@ CREATE TABLE images (
     title VARCHAR(255) NOT NULL,
     category VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
-    img_path VARCHAR(255) NOT NULL
+    img_path VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL;
 );
 
 -- Sample data
 INSERT INTO images (title, category, price, img_path)
 VALUES 
-    ('Nature Picture 1', 'city', 10.00, '/img/almere_campus.jpg'),
-    ('City Picture 1', 'city', 20.00, '/img/city.jpg'),
-    ('Animals Picture 1', 'animals', 15.00, '/img/hond_sneeuw.jpg'),
-    ('Nature Picture 2', 'nature', 45.00, '/img/nature2.jpg');
+    ('Nature Picture 1', 'city', 10.00, '/img/almere_campus.jpg', 'dominique'),
+    ('City Picture 1', 'city', 20.00, '/img/city.jpg', 'anonomous'),
+    ('Animals Picture 1', 'animals', 15.00, '/img/hond_sneeuw.jpg', 'mark'),
+    ('Nature Picture 2', 'nature', 45.00, '/img/nature2.jpg', 'user292');
