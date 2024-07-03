@@ -31,10 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <option value="nature">Nature</option>
             <option value="city">City</option>
             <option value="animals">Animals</option>
+            <option value="people">People</option>
         </select>
 
         <label for="price">Price:</label>
         <input type="number" id="price" name="price" step="0.01" required>
+
+        <label for="author">author:</label>
+        <input type="text" id="author" name="author" required>
+
 
         <label for="image">Choose an image:</label>
         <input type="file" id="image" name="image" accept="image/*" required>
