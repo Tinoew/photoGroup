@@ -53,6 +53,37 @@ function register($conn) {
         echo "<script type=\"text/javascript\">toastr.error('register failed: ')</script>" . $e->getMessage();
     }
 }
+
+function login($conn)
+{
+    if (isset($_POST['name']) && isset($_POST['password'])) {
+        $name = $_POST['name'];
+        $password = $_POST['password'];
+
+        $stmt = $conn->prepare("SELECT * FROM users WHERE name = :name");
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                // User successfully logged in, save user data in session variables
+                session_start(); // Start the session
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['loggedin'] = true; // Add a session variable to indicate successful login
+
+                header("Location: ./index.php");
+                exit();
+            } else {
+                echo "<script type=\"text/javascript\">toastr.error('Wachtwoord en Email adres komen niet overeen')</script>";
+            }
+        } else {
+            echo "<script type=\"text/javascript\">toastr.error('Gebruiker niet gevonden')</script>";
+        }
+    }
+}
+
 function upload($conn) {
     try {
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
