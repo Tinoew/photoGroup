@@ -3,6 +3,15 @@
 include_once 'functions/functions.php';
 $conn = dbConnect();
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php"); // Redirect to login page if not logged in
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     upload($conn);
 }
@@ -49,9 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="price">Price:</label>
         <input type="number" id="price" name="price" step="0.01" required>
 
-        <label for="author">author:</label>
+        <label for="author">Author:</label>
         <input type="text" id="author" name="author" required>
-
 
         <label for="image">Choose an image:</label>
         <input type="file" id="image" name="image" accept="image/*" required>
