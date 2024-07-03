@@ -10,12 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <title>Upload Photo</title>
 </head>
+
 <body>
     <?php include_once 'includes/navbar.php'; ?>
 
@@ -31,7 +33,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <option value="nature">Nature</option>
             <option value="city">City</option>
             <option value="animals">Animals</option>
+            <option value="landscapes">Landscapes</option>
+            <option value="portraits">Portraits</option>
+            <option value="architecture">Architecture</option>
+            <option value="travel">Travel</option>
+            <option value="events">Events</option>
+            <option value="food">Food</option>
+            <option value="sports">Sports</option>
+            <option value="black_and_white">Black and White</option>
+            <option value="abstract">Abstract</option>
+            <option value="street_photography">Street Photography</option>
+            <option value="night_photography">Night Photography</option>
+            <option value="cars">Cars</option>
         </select>
+
 
         <label for="price">Price:</label>
         <input type="number" id="price" name="price" step="0.01" required>
@@ -43,4 +58,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
     <?php include_once 'includes/footer.php'; ?>
 </body>
+
 </html>
