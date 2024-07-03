@@ -9,11 +9,11 @@ function dbConnect() {
         $password = "";
 
         $conn = new PDO($dsn, $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Zorgt ervoor dat fouten worden weergegeven
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Ensure errors are displayed
         return $conn;
     } catch (PDOException $e) {
-        echo "Verbindingsfout: " . $e->getMessage();
-        exit; // Stop verdere uitvoering als er een fout is
+        echo "Connection error: " . $e->getMessage();
+        exit; // Stop further execution if there is an error
     }
 }
 
@@ -32,12 +32,12 @@ function register($conn) {
         return;
     }
 
-    // Controleren of de naam al bestaat
+    // Check if the name already exists
     $checkSql = 'SELECT * FROM users WHERE name = :name';
     $checkStmt = $conn->prepare($checkSql);
     $checkStmt->execute(['name' => $name]);
     if ($checkStmt->rowCount() > 0) {
-        echo "<script type=\"text/javascript\">toastr.error('Gebruiker bestaat al')</script>";
+        echo "<script type=\"text/javascript\">toastr.error('User already exists')</script>";
         return;
     }
 
@@ -48,9 +48,9 @@ function register($conn) {
         $stmt = $conn->prepare($sql);
         $stmt->execute(['name' => $name, 'password' => $hashed_password]);
 
-        echo "<script type=\"text/javascript\">toastr.success('registered succesful')</script>";
+        echo "<script type=\"text/javascript\">toastr.success('Registered successfully')</script>";
     } catch (PDOException $e) {
-        echo "<script type=\"text/javascript\">toastr.error('register failed: ')</script>" . $e->getMessage();
+        echo "<script type=\"text/javascript\">toastr.error('Registration failed: ')</script>" . $e->getMessage();
     }
 }
 
@@ -76,10 +76,10 @@ function login($conn)
                 header("Location: ./index.php");
                 exit();
             } else {
-                echo "<script type=\"text/javascript\">toastr.error('Wachtwoord en Email adres komen niet overeen')</script>";
+                echo "<script type=\"text/javascript\">toastr.error('Username and password do not match')</script>";
             }
         } else {
-            echo "<script type=\"text/javascript\">toastr.error('Gebruiker niet gevonden')</script>";
+            echo "<script type=\"text/javascript\">toastr.error('User not found')</script>";
         }
     }
 }
@@ -119,14 +119,16 @@ function upload($conn) {
                 $title = htmlspecialchars($_POST['title']);
                 $category = htmlspecialchars($_POST['category']);
                 $price = htmlspecialchars($_POST['price']);
+                $author = htmlspecialchars($_POST['author']);
 
                 // Insert file information into the database (without description)
-                $sql = "INSERT INTO images (title, category, price, img_path) VALUES (:title, :category, :price, :img_path)";
+                $sql = "INSERT INTO images (title, category, price, img_path, author) VALUES (:title, :category, :price, :img_path, :author)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':title', $title);
                 $stmt->bindParam(':category', $category);
                 $stmt->bindParam(':price', $price);
                 $stmt->bindParam(':img_path', $targetFile);
+                $stmt->bindParam(':author', $author);
                 
                 if ($stmt->execute()) {
                     echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
