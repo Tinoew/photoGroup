@@ -31,41 +31,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="message">
         <p>Here you can upload a photo for your photobook.</p>
     </div>
-    <form method="post" action="" enctype="multipart/form-data">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
+    <div class="form-container">
+    <div class="upload-container">
+        <form method="post" action="" enctype="multipart/form-data">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
 
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-            <option value="nature">Nature</option>
-            <option value="city">City</option>
-            <option value="animals">Animals</option>
-            <option value="people">People</option>
-            <option value="landscapes">Landscapes</option>
-            <option value="portraits">Portraits</option>
-            <option value="architecture">Architecture</option>
-            <option value="travel">Travel</option>
-            <option value="events">Events</option>
-            <option value="food">Food</option>
-            <option value="sports">Sports</option>
-            <option value="black_and_white">Black and White</option>
-            <option value="abstract">Abstract</option>
-            <option value="street_photography">Street Photography</option>
-            <option value="night_photography">Night Photography</option>
-            <option value="cars">Cars</option>
-        </select>
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="nature">Nature</option>
+                <option value="city">City</option>
+                <option value="animals">Animals</option>
+                <option value="people">People</option>
+                <option value="landscapes">Landscapes</option>
+                <option value="portraits">Portraits</option>
+                <option value="architecture">Architecture</option>
+                <option value="travel">Travel</option>
+                <option value="events">Events</option>
+                <option value="food">Food</option>
+                <option value="sports">Sports</option>
+                <option value="black_and_white">Black and White</option>
+                <option value="abstract">Abstract</option>
+                <option value="street_photography">Street Photography</option>
+                <option value="night_photography">Night Photography</option>
+                <option value="cars">Cars</option>
+            </select>
 
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" step="0.01" required>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
 
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
 
-        <label for="image">Choose an image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+            <label for="image">Choose an image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
 
-        <input type="submit" value="Upload">
-    </form>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</div>
+
+
     <?php include_once 'includes/footer.php'; ?>
 </body>
 </html>
