@@ -85,11 +85,15 @@ function login($conn)
 }
 
 function upload($conn) {
+    session_start();
+    if (!isset($_SESSION['id'])) {
+        echo "You need to be logged in to upload files.";
+        return;
+    }
+    
     try {
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-            // Define the target directory
             $targetDir = "img/";
-            // Check if the directory exists, if not, create it
             if (!is_dir($targetDir)) {
                 mkdir($targetDir, 0755, true);
             }
@@ -97,38 +101,35 @@ function upload($conn) {
             $targetFile = $targetDir . basename($_FILES["image"]["name"]);
             $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-            // Check if the file is an actual image
             $check = getimagesize($_FILES["image"]["tmp_name"]);
             if ($check === false) {
                 throw new Exception("File is not an image.");
             }
 
-            // Check file size (example: limit to 5MB)
             if ($_FILES["image"]["size"] > 5000000) {
                 throw new Exception("Sorry, your file is too large.");
             }
 
-            // Allow certain file formats
             $allowedTypes = array("jpg", "jpeg", "png", "gif");
             if (!in_array($imageFileType, $allowedTypes)) {
                 throw new Exception("Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
             }
 
-            // Try to move the uploaded file to the target directory
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
                 $title = htmlspecialchars($_POST['title']);
                 $category = htmlspecialchars($_POST['category']);
                 $price = htmlspecialchars($_POST['price']);
                 $author = htmlspecialchars($_POST['author']);
+                $userId = $_SESSION['id'];
 
-                // Insert file information into the database (without description)
-                $sql = "INSERT INTO images (title, category, price, img_path, author) VALUES (:title, :category, :price, :img_path, :author)";
+                $sql = "INSERT INTO images (title, category, price, img_path, author, user_id) VALUES (:title, :category, :price, :img_path, :author, :user_id)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':title', $title);
                 $stmt->bindParam(':category', $category);
                 $stmt->bindParam(':price', $price);
                 $stmt->bindParam(':img_path', $targetFile);
                 $stmt->bindParam(':author', $author);
+                $stmt->bindParam(':user_id', $userId);
                 
                 if ($stmt->execute()) {
                     echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
@@ -145,5 +146,8 @@ function upload($conn) {
         echo "Error: " . $e->getMessage();
     }
 }
+
+
+
 
 ?>

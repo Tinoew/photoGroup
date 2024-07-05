@@ -30,6 +30,9 @@ CREATE TABLE images (
 );
 
 -- Sample data
+
+ALTER TABLE images ADD COLUMN user_id INT;
+
 INSERT INTO images (title, category, price, img_path, author)
 VALUES 
     ('Nature Picture 1', 'city', 10.00, '/img/almere_campus.jpg', 'dominique'),
