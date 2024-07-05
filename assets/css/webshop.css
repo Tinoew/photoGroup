@@ -132,15 +132,15 @@ nav a:hover {
 .grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 
 
 .grid-item {
-    width: 400px;
-    height: 350px;
+    width: 510px;
+    height: 400px;
     background-color: #f9ecec;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
