@@ -26,11 +26,11 @@ CREATE TABLE images (
     category VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     img_path VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL;
+    author VARCHAR(255) NOT NULL
 );
 
 -- Sample data
-INSERT INTO images (title, category, price, img_path)
+INSERT INTO images (title, category, price, img_path, author)
 VALUES 
     ('Nature Picture 1', 'city', 10.00, '/img/almere_campus.jpg', 'dominique'),
     ('City Picture 1', 'city', 20.00, '/img/city.jpg', 'anonomous'),
