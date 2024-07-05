@@ -85,12 +85,11 @@ function login($conn)
 }
 
 function upload($conn) {
-    session_start();
     if (!isset($_SESSION['id'])) {
         echo "You need to be logged in to upload files.";
         return;
     }
-    
+
     try {
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
             $targetDir = "img/";
@@ -116,25 +115,29 @@ function upload($conn) {
             }
 
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                $title = htmlspecialchars($_POST['title']);
-                $category = htmlspecialchars($_POST['category']);
-                $price = htmlspecialchars($_POST['price']);
-                $author = htmlspecialchars($_POST['author']);
-                $userId = $_SESSION['id'];
+                if (isset($_POST['name'], $_POST['title'], $_POST['category'], $_POST['price'])) {
+                    $author = htmlspecialchars($_POST['name']);
+                    $title = htmlspecialchars($_POST['title']);
+                    $category = htmlspecialchars($_POST['category']);
+                    $price = htmlspecialchars($_POST['price']);
+                    $userId = $_SESSION['id'];
 
-                $sql = "INSERT INTO images (title, category, price, img_path, author, user_id) VALUES (:title, :category, :price, :img_path, :author, :user_id)";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam(':title', $title);
-                $stmt->bindParam(':category', $category);
-                $stmt->bindParam(':price', $price);
-                $stmt->bindParam(':img_path', $targetFile);
-                $stmt->bindParam(':author', $author);
-                $stmt->bindParam(':user_id', $userId);
-                
-                if ($stmt->execute()) {
-                    echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                    $sql = "INSERT INTO images (title, category, price, img_path, author, user_id) VALUES (:title, :category, :price, :img_path, :author, :user_id)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':title', $title);
+                    $stmt->bindParam(':category', $category);
+                    $stmt->bindParam(':price', $price);
+                    $stmt->bindParam(':img_path', $targetFile);
+                    $stmt->bindParam(':author', $author);
+                    $stmt->bindParam(':user_id', $userId);
+
+                    if ($stmt->execute()) {
+                        echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                    } else {
+                        throw new Exception("Sorry, there was an error uploading your file.");
+                    }
                 } else {
-                    throw new Exception("Sorry, there was an error uploading your file.");
+                    throw new Exception("All form fields are required.");
                 }
             } else {
                 throw new Exception("Sorry, there was an error uploading your file.");
@@ -146,6 +149,8 @@ function upload($conn) {
         echo "Error: " . $e->getMessage();
     }
 }
+
+
 
 
 

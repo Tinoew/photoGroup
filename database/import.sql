@@ -22,16 +22,14 @@ CREATE TABLE uploads (
 
 CREATE TABLE images (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    author VARCHAR(255) NOT NULL
     title VARCHAR(255) NOT NULL,
     category VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     img_path VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL
 );
 
 -- Sample data
-
-ALTER TABLE images ADD COLUMN user_id INT;
 
 INSERT INTO images (title, category, price, img_path, author)
 VALUES 
