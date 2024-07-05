@@ -15,6 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
       // Get the username from the session
       $username = $_SESSION['name'];
       echo "<h3>Welcome, $username!</h3>";
+      echo "<a class='profilebttn' href='profile.php'>Profile Page</a> <br><br>";
       echo "<a class='logout' href='logout.php'>Logout</a>";
   } else {
       // If the user is not logged in, show a message
