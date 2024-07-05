@@ -93,9 +93,6 @@ nav a:hover {
     margin: 0;
 }
 
-
-
-
 header {
     background-color: #280022;
     color: #fff;
@@ -172,14 +169,6 @@ header {
     margin: 0 auto 10px auto;
 }
 
-body.Achtergrond {
-    background-image: url(../images/AppeltaartBG.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-
 .registerButton {
     display: flex;
     justify-content: center;
@@ -189,7 +178,6 @@ body.Achtergrond {
     margin-top: 0;
     margin-bottom: 20px;
 }
-
 
 .form-container {
     background-color: rgba(255, 255, 255, 0.8);
@@ -583,7 +571,6 @@ footer {
     }
 }
 
-/* CSS */
 .button-78 {
   align-items: center;
   appearance: none;

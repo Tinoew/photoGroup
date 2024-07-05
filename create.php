@@ -19,12 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <title>Upload Photo</title>
 </head>
+
 <body>
     <?php include_once 'includes/navbar.php'; ?>
 
@@ -32,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>Here you can upload a photo for your photobook.</p>
     </div>
     <div class="form-container">
-    <div class="upload-container">
         <form method="post" action="" enctype="multipart/form-data">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
@@ -69,9 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="submit" value="Upload">
         </form>
     </div>
-</div>
-
-
     <?php include_once 'includes/footer.php'; ?>
 </body>
+
 </html>
