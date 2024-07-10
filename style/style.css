@@ -12,7 +12,9 @@ body {
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    padding-top: 60px; /* Add padding to the top */
 }
+
 
 /* haal de verticale scrollbar weg en behoud de scroll functie */
 html, body {
@@ -47,10 +49,11 @@ nav {
     width: 100%;
     position: fixed;
     top: 0;
-
-    background-color: #280022; /* Add your desired background color */
-    z-index: 1000; /* Adjust the z-index as needed */
+    height: 60px; /* Add a fixed height */
+    background-color: #280022;
+    z-index: 1000;
 }
+
 
 
 nav a {
