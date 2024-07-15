@@ -1,7 +1,11 @@
 <?php
-
+include_once 'includes/head.php';
+include_once 'includes/footer.php';
+include_once 'includes/navbar.php';
 include_once 'functions/functions.php';
+
 $conn = dbConnect();
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -44,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required>
 
-    <label for="category">Category:</label>
+    <label for="category">Category:</label><br>
     <select id="category" name="category" required>
         <option value="nature">Nature</option>
         <option value="city">City</option>
@@ -62,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="street_photography">Street Photography</option>
         <option value="night_photography">Night Photography</option>
         <option value="cars">Cars</option>
-    </select>
+    </select><br><br>
 
     <label for="price">Price:</label>
     <input type="number" id="price" name="price" step="0.01" required>

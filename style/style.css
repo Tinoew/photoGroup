@@ -12,12 +12,14 @@ body {
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
-    padding-top: 60px; /* Add padding to the top */
+    padding-top: 60px;
+    /* Add padding to the top */
 }
 
 
 /* haal de verticale scrollbar weg en behoud de scroll functie */
-html, body {
+html,
+body {
     overflow-y: hidden;
     height: 100%;
 }
@@ -49,7 +51,8 @@ nav {
     width: 100%;
     position: fixed;
     top: 0;
-    height: 60px; /* Add a fixed height */
+    height: 60px;
+    /* Add a fixed height */
     background-color: #280022;
     z-index: 1000;
 }
@@ -76,21 +79,25 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    
+
 }
+
 .nav img {
     border-radius: 50%;
 }
+
 .nav .logo {
     display: flex;
     align-items: center;
 }
+
 .nav .logo img {
     width: 60px;
     height: 60px;
     margin-left: 25px;
     margin-top: 110px;
 }
+
 .navbar h1 {
     font-family: 'Cursive';
     margin: 0;
@@ -105,7 +112,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Zorg ervoor dat de header boven andere content staat */
+    z-index: 1000;
+    /* Zorg ervoor dat de header boven andere content staat */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,7 +243,7 @@ div.search-container {
     display: flex;
     justify-content: center;
     text-align: center;
- }
+}
 
 #search {
     margin: 10px;
@@ -268,6 +276,7 @@ div.row-preview-container {
     justify-content: center;
     width: 100%;
 }
+
 input#registerButton.LoginButton {
     margin-left: 45%;
     margin-right: 45%;
@@ -289,7 +298,8 @@ input#registerButton.LoginButton {
     box-shadow: 0 9px #999;
 }
 
-.LoginButton, .LoginButton2 {
+.LoginButton,
+.LoginButton2 {
     padding: 15px 25px;
     font-size: 16px;
     cursor: pointer;
@@ -302,11 +312,13 @@ input#registerButton.LoginButton {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.LoginButton:hover, .LoginButton2:hover {
+.LoginButton:hover,
+.LoginButton2:hover {
     background-color: #118115;
 }
 
-.LoginButton:active, .LoginButton2:active {
+.LoginButton:active,
+.LoginButton2:active {
     transform: translateY(2px);
 }
 
@@ -575,111 +587,152 @@ footer {
 }
 
 .button-78 {
-  align-items: center;
-  appearance: none;
-  background-clip: padding-box;
-  background-color: initial;
-  background-image: none;
-  border-style: none;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  flex-direction: row;
-  flex-shrink: 0;
-  font-family: Eina01,sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  justify-content: center;
-  line-height: 24px;
-  margin: 0;
-  min-height: 64px;
-  outline: none;
-  overflow: visible;
-  padding: 19px 26px;
-  pointer-events: auto;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  width: auto;
-  word-break: keep-all;
-  z-index: 0;
+    align-items: center;
+    appearance: none;
+    background-clip: padding-box;
+    background-color: initial;
+    background-image: none;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: Eina01, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    justify-content: center;
+    line-height: 24px;
+    margin: 0;
+    min-height: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 19px 26px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: auto;
+    word-break: keep-all;
+    z-index: 0;
 }
 
 @media (min-width: 768px) {
-  .button-78 {
-    padding: 19px 32px;
-  }
+    .button-78 {
+        padding: 19px 32px;
+    }
 }
 
 .button-78:before,
 .button-78:after {
-  border-radius: 80px;
+    border-radius: 80px;
 }
 
 .button-78:before {
-  background-image: linear-gradient(92.83deg, #860083 0, #4c004d 100%);
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -2;
+    background-image: linear-gradient(92.83deg, #860083 0, #4c004d 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
 }
 
 .button-78:after {
-  background-color: initial;
-  background-image: linear-gradient(#760059 0, #450048 100%);
-  bottom: 4px;
-  content: "";
-  display: block;
-  left: 4px;
-  overflow: hidden;
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  transition: all 100ms ease-out;
-  z-index: -1;
+    background-color: initial;
+    background-image: linear-gradient(#760059 0, #450048 100%);
+    bottom: 4px;
+    content: "";
+    display: block;
+    left: 4px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transition: all 100ms ease-out;
+    z-index: -1;
 }
 
 .button-78:hover:not(:disabled):before {
-  background: linear-gradient(92.83deg, rgb(155, 0, 158) 0%, rgb(85, 0, 93) 100%);
+    background: linear-gradient(92.83deg, rgb(155, 0, 158) 0%, rgb(85, 0, 93) 100%);
 }
 
 .button-78:hover:not(:disabled):after {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition-timing-function: ease-in;
-  opacity: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition-timing-function: ease-in;
+    opacity: 0;
 }
 
 .button-78:active:not(:disabled) {
-  color: #ccc;
+    color: #ccc;
 }
 
 .button-78:active:not(:disabled):before {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, rgb(155, 0, 158) 0%, rgb(85, 0, 93) 100%);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, rgb(155, 0, 158) 0%, rgb(85, 0, 93) 100%);
 }
 
 .button-78:active:not(:disabled):after {
-  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-  bottom: 4px;
-  left: 4px;
-  right: 4px;
-  top: 4px;
+    background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    top: 4px;
 }
 
 .button-78:disabled {
-  cursor: default;
-  opacity: .24;
+    cursor: default;
+    opacity: .24;
+}
+
+/* Basic styling for the form */
+.form-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #218838;
 }

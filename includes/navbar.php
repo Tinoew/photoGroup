@@ -11,10 +11,10 @@ if (session_status() == PHP_SESSION_NONE) {
     </div>
 
     <a href="index.php">Home</a>
-    <a href="sell.php">Sell</a>
     <a href="buy.php">Buy</a>
     <?php
     if (isset($_SESSION["id"])) {
+        echo '<a href="sell.php">Sell</a>';
         echo '<a href="create.php">Upload</a>'; // Show the "Upload" tab if the user is logged in
     } else {
         echo '<a href="login.php">Login</a>';
