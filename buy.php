@@ -78,7 +78,6 @@ $conn = null;
                         <img src="<?php echo htmlspecialchars($image['img_path']); ?>" alt="<?php echo htmlspecialchars($image['title']); ?>">
                         <h3><?php echo htmlspecialchars($image['title']); ?></h3>
                         <p>Price: $<?php echo htmlspecialchars($image['price']); ?></p>
-                        <p>Author: <?php echo htmlspecialchars($image['author']); ?></p>
                         <div class="button-container">
                             <form action="buy_form.php" method="get">
                                 <button type="submit" class="button-78" role="button">Buy here</button>
